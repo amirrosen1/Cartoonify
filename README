@@ -1,0 +1,59 @@
+# Image Processing Project
+
+## Overview
+
+This project contains scripts for various image processing tasks, including a cartoonify algorithm that transforms images into cartoon-like versions. The main scripts are `ex6_helper.py`, `test_ex6_2022B.py`, and `cartoonify.py`.
+
+## Files Description
+
+### ex6_helper.py
+This script provides helper functions for handling images. It includes:
+- `load_image`: Loads an image from a file.
+- `show_image`: Displays an image.
+- `save_image`: Saves an image to a file.
+- Functions to convert between PIL Image objects and list representations.
+
+### test_ex6_2022B.py
+This script contains unit tests to ensure the correctness of various image processing functions, including:
+- `separate_channels`: Separates color channels.
+- `combine_channels`: Combines color channels.
+- `RGB2grayscale`: Converts images to grayscale.
+- `apply_kernel`: Applies a blurring kernel.
+- `resize`: Resizes images.
+- `get_edges`: Detects edges in images.
+- `quantize`: Quantizes image colors.
+- `add_mask`: Applies a mask to images.
+
+### cartoonify.py
+This script implements a cartoonify algorithm, using:
+- Grayscale conversion.
+- Edge detection.
+- Image blurring.
+- Color quantization.
+
+The main function `cartoonify` takes an image and parameters for blurring, thresholding, and quantization to produce a cartoon-like effect.
+
+## Usage
+
+1. **Load an Image:**
+   ```python
+   from ex6_helper import load_image
+   image = load_image('path_to_image.png')
+2. Display an Image:
+   ```python
+   from ex6_helper import show_image
+   show_image(image)
+3. Save an Image:
+   ```python
+    from ex6_helper import save_image
+    save_image(image, 'path_to_save_image.png')
+4. Cartoonify an Image:
+    ```python
+    from cartoonify import cartoonify
+    cartoon_image = cartoonify(image, blur=5, threshold=100, quantize=4)
+    show_image(cartoon_image)
+    save_image(cartoon_image, 'path_to_save_cartoon_image.png')
+5. Run Tests:
+    ```python
+    python test_ex6_2022B.py
+    ```
